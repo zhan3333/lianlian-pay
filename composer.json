@@ -1,0 +1,16 @@
+{
+    "name": "zhan3333/lianlian-pay",
+    "description": "连连支付sdk",
+    "authors": [
+        {
+            "name": "zhan",
+            "email": "390961827@qq.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "LLPay\\": ["src/", "src/lib"]
+        }
+    }
+}
