@@ -60,6 +60,40 @@ class LLRealTimePay extends LLPayBase
      *  'confirm_code' => '',   // 当商户配置了要验证疑似订单和卡号姓名验证不一致，不一致时返回校验码
      * ]
      * </pre>
+     *
+     * ----------
+     *
+     * 异步返回数据
+     *
+     * 通过post方式通知客户端
+     *
+     * <pre>
+     * [
+     *	'oid_partner' => '',	// 商户id
+     * 	'no_order' => '',		// 商户订单号
+     * 	'dt_order' => '',		// 付款时间
+     * 	'money_order' => '',	// 支付金额
+     * 	'oid_paybill' => '',	// 连连支付单号
+     * 	'info_order' => '',		// 订单描述
+     * 	'result_pay' => '',		// 付款状态，付款成功，付款失败，付款退款
+     * 	'settle_date' => '',	// 清算日期
+     * ]
+     * </pre>
+     *
+     * result_pay:
+     * SUCCESS 付款成功
+     * FAILURE 付款失败
+     * CANCEL 付款退款
+     *
+     * 需返回固定格式数据
+     *
+     * <pre>
+     * [
+     *  'ret_code' => '',   // 0000 表示处理成功
+     *  'ret_msg' => ''
+     * ]
+     * </pre>
+     *
      */
     public function submit($parameter)
     {
