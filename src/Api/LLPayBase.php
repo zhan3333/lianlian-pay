@@ -47,7 +47,7 @@ class LLPayBase
             default :
                 $mysign = "";
         }
-        file_put_contents("log.txt","签名:".$mysign."\n", FILE_APPEND);
+//        file_put_contents("log.txt","签名:".$mysign."\n", FILE_APPEND);
         return $mysign;
     }
 

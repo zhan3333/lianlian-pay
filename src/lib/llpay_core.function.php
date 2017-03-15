@@ -104,9 +104,9 @@ function getHttpResponsePOST($url, $cacert_url, $para, $input_charset = '') {
 	if (trim($input_charset) != '') {
 		$url = $url."_input_charset=".$input_charset;
 	}
-         file_put_contents("log.txt","请求报文:".$para."\n", FILE_APPEND);
+//         file_put_contents("log.txt","请求报文:".$para."\n", FILE_APPEND);
  	$curl = curl_init($url);
-        file_put_contents("log.txt","请求地址:".$curl."\n", FILE_APPEND);
+//        file_put_contents("log.txt","请求地址:".$curl."\n", FILE_APPEND);
 	curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, true);//SSL证书认证
 	curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 2);//严格认证
 	curl_setopt($curl, CURLOPT_CAINFO,$cacert_url);//证书地址
@@ -117,7 +117,7 @@ function getHttpResponsePOST($url, $cacert_url, $para, $input_charset = '') {
 	$responseText = curl_exec($curl);
 	//var_dump( curl_error($curl) );//如果执行curl过程中出现异常，可打开此开关，以便查看异常内容
 	curl_close($curl);
-	file_put_contents("log.txt","返回值:".$responseText."\n", FILE_APPEND);
+//	file_put_contents("log.txt","返回值:".$responseText."\n", FILE_APPEND);
 	return $responseText;
 }
 
@@ -141,7 +141,7 @@ function getHttpResponseJSON($url, $para) {
         'Content-Length: ' . strlen($json))         
     );
     $responseText = curl_exec($curl);
-    file_put_contents("log.txt","返回值:".$responseText."\n", FILE_APPEND);  
+//    file_put_contents("log.txt","返回值:".$responseText."\n", FILE_APPEND);
     curl_close($curl);
     return $responseText;
 }
